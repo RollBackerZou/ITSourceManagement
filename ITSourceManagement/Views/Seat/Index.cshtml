@@ -1,0 +1,70 @@
+﻿@model ITSourceManagement.ViewModel.SeatSourceViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/bootstrap/bootstrap.min.js"></script>   
+    <script src="~/Scripts/bootstrap/bootstrap-datetimepicker.min.js"></script>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <p>ITSource</p>
+    </div>
+    @using (@Html.BeginForm("Save", "Seat"))
+    {
+        <div class="col-md-12">
+            
+            <table class="table">
+                <tr>
+                    <td class="col-md-6">@Html.LabelFor(m => m.SeatNo)</td>
+                    <td class="col-md-6">@Html.TextBoxFor(m => m.SeatNo)</td>
+                </tr>
+
+                @for (var i = 0; i < 2; i++)
+                {
+                    <tr>
+                        <td>@Html.LabelFor(m => m.ComputerSources[i].Number)</td>
+                        <td>@Html.TextBoxFor(m => m.ComputerSources[i].Number)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.ComputerSources[i].Belongs)</td>
+                        <td>@Html.DropDownListFor(m => m.ComputerSources[i].Belongs, new SelectList(Model.AllBelongs, "Value", "Text"))</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m=>m.ComputerSources[i].Date)</td>
+                        <td>
+                            <div class="ApplyDate" style="width: 100%">
+                                @Html.EditorFor(m => m.ComputerSources[i].Date, new { htmlAttributes = new { @class = "form-control", Value = Model.ComputerSources[i].Date.ToString("yyyy-MM") } })
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    }
+
+</body>
+</html>
+<script>
+        $(".ApplyDate").datetimepicker({
+            format: 'YYYY/MM/DD',
+
+        });
+
+</script>
+

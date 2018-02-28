@@ -1,0 +1,1 @@
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement.Tests\obj\Debug\ITSourceManagement.Tests.csprojResolveAssemblyReference.cache
