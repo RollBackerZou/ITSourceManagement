@@ -1,0 +1,60 @@
+﻿@model List<ITSourceManagement.Models.SeatSource>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap/bootstrap-datetimepicker.min.js"></script>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>座位号</td>
+                <td>主机</td>
+                <td>批次</td>
+                <td>归属</td>
+                <td>显示器1</td>
+                <td>批次</td>
+                <td>归属</td>
+                <td>显示器2</td>
+                <td>批次</td>
+                <td>归属</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SeatNo</td>
+                    <td>@item.Number</td>
+                    <td>@item.Date.ToString("yyyy-MM")</td>
+                    <td>@item.Belongs</td>
+                    @foreach (var com in item.ComputerSources)
+                    {
+                        <td>@com.Number</td>
+                        <td>@com.Date.ToString("yyyy-MM")</td>
+                        <td>@com.Belongs</td>
+                    }
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+    </div>
+</body>
+</html>

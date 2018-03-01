@@ -10,6 +10,7 @@ namespace ITSourceManagement.Controllers
 {
     public class SeatController:Controller
     {
+        SQLContext sqlContext = new SQLContext();
         public ActionResult Index()
         {
             SeatSourceViewModel model = new SeatSourceViewModel();
@@ -23,6 +24,7 @@ namespace ITSourceManagement.Controllers
                          Value=item
                 });
             }
+            model.Date = DateTime.Now;
             model.AllBelongs = result;
             for (var i = 0; i < 2;i++)
             {
@@ -31,9 +33,33 @@ namespace ITSourceManagement.Controllers
             return View(model);
         }
 
-        //public JsonResult Save(SeatSourceViewModel model)
-        //{
+        public JsonResult Save(SeatSourceViewModel model)
+        {
+            JsonResult result = new JsonResult();
+           
+            //sqlContext.Database.CreateIfNotExists(); 
 
-        //}
+            SeatSource seatSource = new SeatSource();
+            seatSource.SeatNo = model.SeatNo;
+            seatSource.Number = model.Number;
+            seatSource.Date = model.Date;
+            seatSource.Belongs = model.Belongs;
+            seatSource.ComputerSources = model.ComputerSources;
+
+            sqlContext.SeatSources.Add(seatSource);
+            int code = sqlContext.SaveChanges();
+            result.Data = code;
+            return Json(result);
+        }
+
+        public ActionResult List()
+        {
+            var data = sqlContext.SeatSources;
+            var result = data
+                //.Where(m => m.SeatNo == "A11")
+                .ToList();
+            
+            return View(result);
+        }
     }
 }
