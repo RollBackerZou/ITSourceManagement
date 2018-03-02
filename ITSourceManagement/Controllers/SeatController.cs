@@ -58,8 +58,13 @@ namespace ITSourceManagement.Controllers
             var result = data
                 //.Where(m => m.SeatNo == "A11")
                 .ToList();
+            PagerInfo pager = new PagerInfo();
+            pager.CurrentPageIndex = 1;
+            pager.PageSize = 5;
+            pager.RecordCount = result.Count;
             
-            return View(result);
+            var rel = new PageNavigationHelp<SeatSource>(pager,result);
+            return View(rel);
         }
     }
 }

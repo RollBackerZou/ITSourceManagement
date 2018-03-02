@@ -118,6 +118,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL.cs" />
     <Compile Include="Controllers\SeatController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -128,7 +129,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ComputerSource.cs" />
+    <Compile Include="Models\PagerInfo.cs" />
     <Compile Include="Models\SeatSource.cs" />
+    <Compile Include="MVCHtmlHelper.cs" />
+    <Compile Include="PageNavigationHelp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLContext.cs" />
     <Compile Include="ViewModel\SeatSourceViewModel.cs" />
