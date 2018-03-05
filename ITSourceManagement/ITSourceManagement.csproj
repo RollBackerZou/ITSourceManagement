@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SeatController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -129,6 +130,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ComputerSource.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\PagerInfo.cs" />
     <Compile Include="Models\SeatSource.cs" />
     <Compile Include="MVCHtmlHelper.cs" />
@@ -218,6 +220,12 @@
     <EmbeddedResource Include="Migrations\201803010142591_InitialCreate.resx">
       <DependentUpon>201803010142591_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

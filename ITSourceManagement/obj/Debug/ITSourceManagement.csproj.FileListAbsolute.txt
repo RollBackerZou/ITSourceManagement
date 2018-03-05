@@ -36,8 +36,8 @@ D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\zh-Hans\System.Web.Razo
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\zh-Hans\System.Web.WebPages.resources.dll
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
-D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagement.dll
-D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagement.pdb
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagement.Migrations.InitialCreate.resources
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagement.csproj.GenerateResource.Cache
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagement.dll
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagement.pdb
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagement.csprojResolveAssemblyReference.cache
