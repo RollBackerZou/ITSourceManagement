@@ -12,7 +12,7 @@ namespace ITSourceManagement.Controllers
     {
         //
         // GET: /Home/
-        //[Authorize(Roles="admin")]
+        //[Authorize(Roles = "Add")]
         public ActionResult Index()
         {
             return View();
@@ -23,6 +23,7 @@ namespace ITSourceManagement.Controllers
             return View();
         }
 
+        [ValidateAntiForgeryToken]
         public ActionResult LoginCheck(LoginModel model)
         {
             if(!ModelState.IsValid)

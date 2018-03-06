@@ -14,24 +14,28 @@ namespace ITSourceManagement
     // 请访问 http://go.microsoft.com/?LinkId=9394801
     public class MvcApplication : System.Web.HttpApplication
     {
-        //public MvcApplication()
-        //{
-        //    AuthenticateRequest += new EventHandler(MvcApplication_AuthorizeRequest);
-        //}
+        public MvcApplication()
+        {
+            AuthenticateRequest += new EventHandler(MvcApplication_AuthorizeRequest);
+        }
 
-        //private void MvcApplication_AuthorizeRequest(object sender, EventArgs e)
-        //{
-        //    var id = Context.User.Identity as FormsIdentity;
-        //    if(id==null)
-        //    {
-        //        return;
-        //    }
-        //    if(id!=null && id.IsAuthenticated)
-        //    {
-        //        var roles = id.Ticket.UserData.Split(',');
-        //        Context.User = new GenericPrincipal(id,roles);
-        //    }
-        //}
+        private void MvcApplication_AuthorizeRequest(object sender, EventArgs e)
+        {
+            if(Context.User == null)
+            {
+                return;
+            }
+            var id = Context.User.Identity as FormsIdentity;
+            if (id == null)
+            {
+                return;
+            }
+            if (id != null && id.IsAuthenticated)
+            {
+                var roles = id.Ticket.UserData.Split(',');
+                Context.User = new GenericPrincipal(id, roles);
+            }
+        }
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

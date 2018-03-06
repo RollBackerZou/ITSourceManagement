@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ITSourceManagement.ViewModel;
 using ITSourceManagement.Models;
+using Aspose.Cells;
 
 namespace ITSourceManagement.Controllers
 {
@@ -65,6 +66,27 @@ namespace ITSourceManagement.Controllers
             
             var rel = new PageNavigationHelp<SeatSource>(pager,result);
             return View(rel);
+        }
+
+        [HttpGet]
+        public ActionResult UploadExcel()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UploadExcel(HttpPostedFileBase ff)
+        {
+            var file = Request.Files["UploadExcel"];
+            if (file == null || file.ContentLength <= 0)
+            {
+                return Json(null);
+            }
+            var fileStream = file.InputStream;
+            var workBook = new Workbook(fileStream);
+            var cells = workBook.Worksheets[0].Cells;
+            var x = cells[0].StringValue;
+            return RedirectToAction("UploadExcel");
         }
     }
 }
