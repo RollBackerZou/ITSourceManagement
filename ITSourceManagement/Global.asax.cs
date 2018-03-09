@@ -17,6 +17,7 @@ namespace ITSourceManagement
         public MvcApplication()
         {
             AuthenticateRequest += new EventHandler(MvcApplication_AuthorizeRequest);
+            
         }
 
         private void MvcApplication_AuthorizeRequest(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace ITSourceManagement
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-         
+            //log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo(Server.MapPath("Log4net.config")));
         }
 
 

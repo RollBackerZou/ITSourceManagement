@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using ITSourceManagement.Filter;
 
 namespace ITSourceManagement
 {
@@ -7,7 +8,9 @@ namespace ITSourceManagement
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            //filters.Add(new HandleErrorAttribute());
+           // filters.Add(new MyActionFilterAttribute() { Message="全局"});//全局filter
+            filters.Add(new ErrorFilterAttribute());
         }
     }
 }

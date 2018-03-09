@@ -5,14 +5,16 @@ using System.Web;
 using System.Web.Mvc;
 using ITSourceManagement.Models;
 using System.Web.Security;
+using ITSourceManagement.Filter;
 
 namespace ITSourceManagement.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         //
         // GET: /Home/
         //[Authorize(Roles = "Add")]
+        [MyActionFilter(Message="Test")]
         public ActionResult Index()
         {
             return View();

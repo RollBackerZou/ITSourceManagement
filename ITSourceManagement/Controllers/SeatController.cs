@@ -8,9 +8,10 @@ using ITSourceManagement.Models;
 using Aspose.Cells;
 
 namespace ITSourceManagement.Controllers
-{
+{    
     public class SeatController:Controller
     {
+        private static log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         SQLContext sqlContext = new SQLContext();
         public ActionResult Index()
         {
@@ -71,6 +72,7 @@ namespace ITSourceManagement.Controllers
         [HttpGet]
         public ActionResult UploadExcel()
         {
+            log.Info("UploadExcel");
             return View();
         }
 
