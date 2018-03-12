@@ -126,11 +126,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\BackEnd\BackEndAreaRegistration.cs" />
     <Compile Include="BLL.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SeatController.cs" />
     <Compile Include="Filter\ActionAttribute.cs" />
+    <Compile Include="Filter\ErrorFilterAttribute.cs" />
     <Compile Include="Filter\MyAuthorizationFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,6 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\BackEnd\Controllers\" />
+    <Folder Include="Areas\BackEnd\Models\" />
+    <Folder Include="Areas\BackEnd\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -251,6 +256,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\Error404.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\Error500.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BackEnd\Views\Web.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
