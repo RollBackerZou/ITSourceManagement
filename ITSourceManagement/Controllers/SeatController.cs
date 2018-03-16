@@ -6,10 +6,11 @@ using System.Web.Mvc;
 using ITSourceManagement.ViewModel;
 using ITSourceManagement.Models;
 using Aspose.Cells;
+using System.IO;
 
 namespace ITSourceManagement.Controllers
-{    
-    public class SeatController:Controller
+{
+    public class SeatController : Controller
     {
         private static log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         SQLContext sqlContext = new SQLContext();
@@ -17,20 +18,20 @@ namespace ITSourceManagement.Controllers
         {
             SeatSourceViewModel model = new SeatSourceViewModel();
             List<SelectListItem> result = new List<SelectListItem>();
-            List<string> list = new List<string>() {  "Heyi","Safs","Influx","ZAIS"};
-            foreach(var item in list)
+            List<string> list = new List<string>() { "Heyi", "Safs", "Influx", "ZAIS" };
+            foreach (var item in list)
             {
                 result.Add(new SelectListItem()
-                { 
-                         Text = item,
-                         Value=item
+                {
+                    Text = item,
+                    Value = item
                 });
             }
             model.Date = DateTime.Now;
             model.AllBelongs = result;
-            for (var i = 0; i < 2;i++)
+            for (var i = 0; i < 2; i++)
             {
-                model.ComputerSources.Add(new ComputerSource() { Date = DateTime.Now});
+                model.ComputerSources.Add(new ComputerSource() { Date = DateTime.Now });
             }
             return View(model);
         }
@@ -38,8 +39,8 @@ namespace ITSourceManagement.Controllers
         public JsonResult Save(SeatSourceViewModel model)
         {
             JsonResult result = new JsonResult();
-           
-            //sqlContext.Database.CreateIfNotExists(); 
+
+            sqlContext.Database.CreateIfNotExists(); 
 
             SeatSource seatSource = new SeatSource();
             seatSource.SeatNo = model.SeatNo;
@@ -64,8 +65,8 @@ namespace ITSourceManagement.Controllers
             pager.CurrentPageIndex = 1;
             pager.PageSize = 5;
             pager.RecordCount = result.Count;
-            
-            var rel = new PageNavigationHelp<SeatSource>(pager,result);
+
+            var rel = new PageNavigationHelp<SeatSource>(pager, result);
             return View(rel);
         }
 
@@ -89,6 +90,39 @@ namespace ITSourceManagement.Controllers
             var cells = workBook.Worksheets[0].Cells;
             var x = cells[0].StringValue;
             return RedirectToAction("UploadExcel");
+        }
+
+        public FileResult Download()
+        {
+            var allData = sqlContext.SeatSources.ToList();
+            var templatePath = Server.MapPath(@"~\Content\Template\SeatInfo.xlsx");
+            Workbook wk = new Workbook(templatePath);
+            Worksheet ws = wk.Worksheets[0];
+            if (allData.Count == 0)
+            {
+                MemoryStream msEmpty = new MemoryStream();
+                wk.Save(msEmpty, Aspose.Cells.SaveFormat.Xlsx);
+                msEmpty.Position = 0;
+                return File(msEmpty, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+            }
+
+            for (var i = 0; i < allData.Count; i++)
+            {
+                ws.Cells[i + 1, 0].PutValue(allData[i].SeatNo);
+                ws.Cells[i + 1, 1].PutValue(allData[i].Date);
+                ws.Cells[i + 1, 2].PutValue(allData[i].Belongs);
+                for (var j = 0; j < allData[i].ComputerSources.Count; j++)
+                {
+                    var computerSource = allData[i].ComputerSources.ToList();
+                    ws.Cells[i + 1, 3 + j * 3].PutValue(computerSource[j].Number);
+                    ws.Cells[i + 1, 4 + j * 3].PutValue(computerSource[j].Date);
+                    ws.Cells[i + 1, 5 + j * 3].PutValue(computerSource[j].Belongs);
+                }
+            }
+            MemoryStream ms = new MemoryStream();
+            wk.Save(ms, Aspose.Cells.SaveFormat.Xlsx);
+            ms.Position = 0;
+            return File(ms, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
         }
     }
 }

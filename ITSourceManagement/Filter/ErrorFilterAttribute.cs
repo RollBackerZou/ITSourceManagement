@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ITSourceManagement.Filter
 {
-    public class ErrorFilterAttribute : FilterAttribute, IExceptionFilter
+    public class ErrorFilterAttribute : FilterAttribute
     {
         public void Application_Error(object sender,EventArgs e)
         {

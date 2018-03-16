@@ -12,6 +12,9 @@
 </head>
 <body>
     <div>
+        <a href="~/Content/Template/SeatInfo.xlsx">Download Template</a>
+    </div>
+    <div>
         @using (Html.BeginForm("UploadExcel", "Seat", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <input type="file" name="UploadExcel" />

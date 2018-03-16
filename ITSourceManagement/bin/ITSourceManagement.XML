@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ITSourceManagement</name>
+    </assembly>
+    <members>
+        <member name="M:ITSourceManagement.PagedList`1.#ctor(System.Linq.IQueryable{`0},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="source">数据源</param>
+            <param name="pageIndex">第几页</param>
+            <param name="pageSize">每页数据量</param>
+        </member>
+        <member name="M:ITSourceManagement.MVCHtmlHelper.GetNormalPage(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            生成分页的html
+            </summary>
+            <param name="currentPageIndex"></param>
+            <param name="PageSize"></param>
+            <param name="RecordCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSourceManagement.PageNavigationHelp`1.#ctor(ITSourceManagement.Models.PagerInfo,System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            获取某页数据
+            </summary>
+            <param name="pager">分页项</param>
+            <param name="source">源数据</param>
+        </member>
+    </members>
+</doc>

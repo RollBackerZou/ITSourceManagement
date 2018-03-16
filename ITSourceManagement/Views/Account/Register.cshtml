@@ -1,0 +1,41 @@
+﻿@model ITSourceManagement.ViewModel.RegisterViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4>用户注册</h4>
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName, new { @class = "col-md-2" })
+            @Html.TextBoxFor(m => m.UserName, new { @class = "col-md-6" })
+            @Html.ValidationMessageFor(m => m.UserName);
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PassWord, new { @class = "col-md-2" })
+            @Html.TextBoxFor(m => m.PassWord, new { @class = "col-md-6" })
+            @Html.ValidationMessageFor(m => m.PassWord)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPsw, new { @class = "col-md-2" })
+            @Html.TextBoxFor(m => m.ConfirmPsw, new { @class = "col-md-6" })
+            @Html.ValidationMessageFor(m => m.ConfirmPsw)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2" })
+            @Html.TextBoxFor(m => m.Email, new { @class = "col-md-6" })
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+    <button type="submit" class="btn btn-primary">注册</button>
+    }
+</body>
+</html>

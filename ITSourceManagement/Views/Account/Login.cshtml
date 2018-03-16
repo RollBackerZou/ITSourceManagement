@@ -1,0 +1,45 @@
+﻿@model ITSourceManagement.ViewModel.LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <div>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class="form"}))
+    {
+        <h4>登录</h4>
+        <div>
+            @Html.LabelFor(m => m.UserName, new { @class = "col-md-4" })
+            @Html.TextBoxFor(m => m.UserName, new { @class = "col-md-6 username" })
+        </div>
+    <div>
+        @Html.LabelFor(m => m.PassWord, new { @class = "col-md-4" })
+        @Html.TextBoxFor(m => m.PassWord, new { @class = "col-md-6" })
+    </div>
+        <div>
+            @Html.CheckBoxFor(m => m.RememberMe)
+        </div>
+        <div>
+            <a href="#nogo" id="resetPsw">修改密码</a>
+        </div>
+    <button type="submit" class="btn btn-primary">登录</button>
+    <button type="button" id="forget" class="btn btn-danger">忘记密码</button>
+    }
+    </div>
+</body>
+</html>
+<script>
+    $("#resetPsw").click(function () {
+        debugger;
+        var username = $(".username").val();
+        window.location.href = "/Account/ResetPsw?userName="+username;
+    })
+</script>

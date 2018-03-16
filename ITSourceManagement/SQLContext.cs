@@ -12,5 +12,7 @@ namespace ITSourceManagement
     {
         public DbSet<ComputerSource> ComputerSources { get; set; }
         public DbSet<SeatSource> SeatSources { get; set; }
+        public DbSet<AppUser> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

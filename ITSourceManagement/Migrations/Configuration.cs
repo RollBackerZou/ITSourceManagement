@@ -10,7 +10,6 @@ namespace ITSourceManagement.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "ITSourceManagement.SQLContext";
         }
 
         protected override void Seed(ITSourceManagement.SQLContext context)
