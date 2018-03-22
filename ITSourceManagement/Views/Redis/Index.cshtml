@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <title></title>
+</head>
+<body>
+    <div>
+        <button id="saveAll">保存所有</button>
+        <button id="saveOne">保存一条</button>
+        @*@Html.ActionLink("保存所有", "SaveAll")
+        @Html.ActionLink("保存一条", "SaveOne")*@
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $("#saveAll").click(function () {
+        var link = "@Url.Action("SaveAll","Redis")";
+        $.post(link, function (data) {
+            alert(data)
+        });
+    })
+</script>

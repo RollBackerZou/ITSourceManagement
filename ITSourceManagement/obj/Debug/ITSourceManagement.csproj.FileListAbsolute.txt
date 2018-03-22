@@ -40,5 +40,10 @@ D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagemen
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagement.pdb
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\Aspose.Cells.dll
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\log4net.dll
-D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagement.csprojResolveAssemblyReference.cache
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\ITSourceManagement.XML
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\ServiceStack.dll
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\ServiceStack.Interfaces.dll
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\ServiceStack.ServiceInterface.dll
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\StackExchange.Redis.dll
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\StackExchange.Redis.xml
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagement.csprojResolveAssemblyReference.cache

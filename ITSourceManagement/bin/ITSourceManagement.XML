@@ -28,5 +28,16 @@
             <param name="pager">分页项</param>
             <param name="source">源数据</param>
         </member>
+        <member name="M:ITSourceManagement.RedisManager.CreateManager">
+            <summary>
+            创建连接池管理对象
+            </summary>
+        </member>
+        <member name="M:ITSourceManagement.RedisManager.GetClient">
+            <summary>
+            客户端缓存操作对象
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
