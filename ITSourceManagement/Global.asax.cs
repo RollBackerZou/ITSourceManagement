@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Security.Principal;
+using System.Web.Caching;
 
 namespace ITSourceManagement
 {
@@ -45,6 +46,9 @@ namespace ITSourceManagement
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             //log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo(Server.MapPath("Log4net.config")));
+            //var conn = System.Configuration.ConfigurationManager.ConnectionStrings["SQLContext"].ToString();
+            //SqlCacheDependencyAdmin.EnableNotifications(conn); //启动数据库的数据缓存依赖功能  
+            //SqlCacheDependencyAdmin.EnableTableForNotifications(conn, "SeatSources"); //启用数据表缓存  
         }
 
 

@@ -18,7 +18,11 @@ namespace ITSourceManagement
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-
+            routes.MapRoute(
+                name: "Test",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller="Test",action="Index",id = UrlParameter.Optional}
+                );
             routes.MapRoute(
                 name: "Default1",
                 url: "{Area}/{controller}/{action}/{id}",

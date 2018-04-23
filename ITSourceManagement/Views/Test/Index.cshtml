@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <div>
+    @*<input type="button" id="btnShow" value="Show" onclick="test();"/>*@
+        <input type="button" id="btnShow" value="Show"/>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    //var result = confirm("really?")
+    //prompt("number",10)
+    //setTimeout(test, 1000)
+    //setInterval(function () { alert(2)},2000)
+    function test()
+    {
+        alert("1")
+    }
+    $("#btnShow").bind("click", function () {
+        alert(2);
+    })
+</script>

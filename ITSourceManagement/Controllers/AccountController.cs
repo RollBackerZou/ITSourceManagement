@@ -44,6 +44,10 @@ namespace ITSourceManagement.Controllers
 
         public ActionResult Login()
         {
+            if(Session["UserName"]!=null)
+            {
+                return RedirectToAction("Index","Home");
+            }
             return View();
         }
 

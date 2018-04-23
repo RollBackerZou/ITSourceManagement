@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace ITSourceManagement.Controllers
 {
-    public class BaseController : Controller
+    public class PrimaryController : Controller
     {
-        public BaseController()
+        public PrimaryController()
         {
             if(HttpContext==null)
             {

@@ -2,7 +2,7 @@
     Layout = null;
 }
 
-@{
+@*@{
     TimeSpan ts = DateTime.Now - (DateTime)System.Web.HttpContext.Current.Session["StartTime"];
     int time = Convert.ToInt32(ts.TotalMilliseconds);
     System.Web.HttpContext.Current.Session.Clear();
@@ -10,5 +10,5 @@
 
     <div>
      执行时间：@time 毫秒
-    </div>
+    </div>*@
 @RenderBody()

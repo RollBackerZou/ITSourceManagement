@@ -46,4 +46,14 @@ D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\ServiceStack.Interfaces
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\ServiceStack.ServiceInterface.dll
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\StackExchange.Redis.dll
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\StackExchange.Redis.xml
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\Autofac.Configuration.dll
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\Autofac.dll
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\Microsoft.Extensions.Configuration.dll
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\Microsoft.Extensions.Primitives.dll
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\Autofac.xml
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\Autofac.Configuration.xml
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\Microsoft.Extensions.Configuration.xml
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\bin\Microsoft.Extensions.Primitives.xml
 D:\MyFirstTemp\ITSourceManagement\ITSourceManagement\obj\Debug\ITSourceManagement.csprojResolveAssemblyReference.cache
